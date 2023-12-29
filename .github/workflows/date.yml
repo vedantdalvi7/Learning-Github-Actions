@@ -23,7 +23,7 @@ jobs:
     
     job4:
         needs: [job1,job2,job3]
-        runs-on: windows-19
+        runs-on: ubuntu-20.04
         steps:
-            - name: date windows-19
-              run: Get-Date
+            - name: date ubuntu-20.04
+              run: date

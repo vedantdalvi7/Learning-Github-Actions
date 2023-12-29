@@ -3,27 +3,23 @@ name: date
 on: [push]
 
 jobs:
-    job1:
+    ubuntu:
         runs-on: ubuntu-latest
         steps:
-            - name: date ubuntu
-              run: date
+            - run: date
 
-    job2:
+    windows:
         runs-on: windows-latest
-        steps:
-            - name: date windows
-              run: Get-Date
+        steps:          
+            - run: date
 
-    job3:
+    macos:
         runs-on: macos-latest
-        steps:
-            - name: date macos
-              run: date
+        steps:                
+            - run: date
     
-    job4:
-        needs: [job1,job2,job3]
+    ubuntu_20-04:
+        needs: [ubuntu,windows,macos]
         runs-on: ubuntu-20.04
-        steps:
-            - name: date ubuntu-20.04
-              run: date
+        steps:                
+            - run: date
